@@ -1,0 +1,100 @@
+// ---------- NAV SCROLL / PROGRESS BAR ----------
+const siteNav = document.getElementById('site-nav');
+const siteProgress = document.getElementById('site-progress');
+
+window.addEventListener('scroll', () => {
+  siteNav.classList.toggle('scrolled', window.scrollY > 60);
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100)) : 0;
+  siteProgress.style.width = pct + '%';
+}, { passive: true });
+
+// ---------- HERO SLIDESHOW ----------
+const heroSlides = document.querySelectorAll('.hero-slide');
+let activeSlide = 0;
+
+setInterval(() => {
+  heroSlides[activeSlide].classList.remove('active');
+  activeSlide = (activeSlide + 1) % heroSlides.length;
+  heroSlides[activeSlide].classList.add('active');
+}, 4500);
+
+// ---------- ALBUM DETAIL VIEW ----------
+// Edita spotify/youtube aquí para apuntar cada disco a su propio enlace.
+const albums = [
+  { title: 'Ecos de la Casa', year: '2026', cover: 'assets/site/Ecos-de-la-casa-cover.png', description: 'El nuevo proyecto de Alex, inspirado en la adoración en comunidad para acompañar a las iglesias de Latinoamérica.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef' },
+  { title: 'Sigo en Pie', year: '2022', cover: 'assets/site/Sigo-en-pie-cover.png', description: 'Canciones nacidas de procesos difíciles, con mensajes de fe y esperanza como Imperfecto y Dios No Está En Mi Contra.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef' },
+  { title: 'Viviré Live', year: '2020', cover: 'assets/site/Vivire-Live.png', description: 'Registro en vivo que captura la energía de la adoración en comunidad.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef' },
+  { title: 'Mi Dios y Rey', year: '2015', cover: 'assets/site/Mi-Dios-y-rey-cover.png', description: 'El primer disco de Alex Caniulef, punto de partida de una propuesta de adoración honesta y cercana.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef' },
+];
+
+const homeView = document.getElementById('home-view');
+const albumView = document.getElementById('album-view');
+const albumBack = document.getElementById('album-back');
+
+const albumDetailCover = document.getElementById('album-detail-cover');
+const albumDetailYear = document.getElementById('album-detail-year');
+const albumDetailTitle = document.getElementById('album-detail-title');
+const albumDetailDescription = document.getElementById('album-detail-description');
+const albumDetailSpotify = document.getElementById('album-detail-spotify');
+const albumDetailYoutube = document.getElementById('album-detail-youtube');
+
+document.querySelectorAll('.album-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const index = Number(card.dataset.albumIndex);
+    if (index === 0) {
+      window.ecosOpen();
+      return;
+    }
+    const album = albums[index];
+    albumDetailCover.style.backgroundImage = `url('${album.cover}')`;
+    albumDetailYear.textContent = album.year;
+    albumDetailTitle.textContent = album.title;
+    albumDetailDescription.textContent = album.description;
+    albumDetailSpotify.href = album.spotify;
+    albumDetailYoutube.href = album.youtube;
+
+    homeView.hidden = true;
+    albumView.hidden = false;
+    window.scrollTo(0, 0);
+  });
+});
+
+albumBack.addEventListener('click', () => {
+  albumView.hidden = true;
+  homeView.hidden = false;
+});
+
+// ---------- CONTACT FORM ----------
+const contactForm = document.getElementById('contact-form');
+const contactSubmit = document.getElementById('contact-submit');
+const contactSuccess = document.getElementById('contact-success');
+const contactError = document.getElementById('contact-error');
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  contactSubmit.disabled = true;
+  contactSubmit.textContent = 'Enviando…';
+  contactError.hidden = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: new FormData(contactForm),
+    });
+    const json = await res.json();
+    if (json.success) {
+      contactForm.hidden = true;
+      contactSuccess.hidden = false;
+    } else {
+      contactError.hidden = false;
+      contactSubmit.disabled = false;
+      contactSubmit.textContent = 'Enviar';
+    }
+  } catch (err) {
+    contactError.hidden = false;
+    contactSubmit.disabled = false;
+    contactSubmit.textContent = 'Enviar';
+  }
+});

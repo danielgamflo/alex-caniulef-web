@@ -1,0 +1,399 @@
+/* ============ ECOS DE LA CASA — album experience ============ */
+#ecos-view {
+  --ecos-accent: #d4a574;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+#ecos-view a { color: var(--ecos-accent); }
+#ecos-view a:hover { color: #e8c9a8; }
+
+@keyframes ecosHeroReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ecosScrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+@keyframes ecosScrollDrop {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  40% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  41% { transform-origin: bottom; }
+  80%, 100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ---------- progress + header + nav dots ---------- */
+.ecos-progress {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: linear-gradient(to right, var(--ecos-accent), #e8c9a8);
+  z-index: 1000; width: 0%;
+}
+.ecos-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(36px, 6vw, 72px); height: 56px;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  transition: background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.5s ease;
+}
+.ecos-header.scrolled {
+  background: rgba(10, 8, 6, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+.ecos-header-left { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+.ecos-back {
+  background: none; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.6);
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px;
+  border-radius: 999px; cursor: pointer; font-family: inherit; transition: border-color 0.3s ease, color 0.3s ease;
+}
+.ecos-back:hover { border-color: var(--ecos-accent); color: var(--ecos-accent); }
+.ecos-logo { display: flex; align-items: center; text-decoration: none; }
+.ecos-logo img { height: 36px; width: auto; opacity: 0.88; transition: opacity 0.3s ease; }
+.ecos-logo:hover img { opacity: 1; }
+.ecos-header-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+.ecos-navdots {
+  position: fixed; right: 30px; top: 50%; transform: translateY(-50%); z-index: 100;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ecos-navdot {
+  width: 10px; height: 10px; border-radius: 50%; cursor: pointer;
+  transition: all 0.4s ease; background: #2a2a2a; border: 1.5px solid #b8b8b8;
+}
+.ecos-navdot:hover { border-color: var(--ecos-accent); }
+.ecos-navdot.active { background: var(--ecos-accent); border-color: var(--ecos-accent); transform: scale(1.3); }
+
+/* ---------- hero ---------- */
+.ecos-hero { position: relative; height: 100vh; overflow: hidden; background: #0c0a08; }
+.ecos-hero-media { position: absolute; inset: 0; z-index: 0; }
+.ecos-hero-media img {
+  width: 100%; height: 120%; top: -10%; position: absolute; left: 0;
+  object-fit: cover; display: block; filter: brightness(0.88) saturate(1);
+}
+.ecos-hero-watermark {
+  position: absolute; bottom: -4vw; right: -1vw;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 30vw; font-weight: 900;
+  letter-spacing: -6px; line-height: 1; text-transform: uppercase;
+  color: rgba(255,255,255,0.04); pointer-events: none; user-select: none; z-index: 5;
+}
+.ecos-hero-content {
+  position: relative; z-index: 10; height: 100vh; display: flex; flex-direction: column;
+  justify-content: space-between; padding: clamp(36px,5vw,60px) clamp(36px,6vw,72px);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 22%, transparent 52%, rgba(0,0,0,0.5) 82%, rgba(0,0,0,0.72) 100%);
+}
+.ecos-hero-meta-row {
+  display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3);
+}
+.ecos-hero-info {
+  display: flex; flex-direction: column; gap: 14px;
+  animation: ecosHeroReveal 1.2s cubic-bezier(0.25,0.46,0.45,0.94) both; animation-delay: 0.4s;
+}
+.ecos-hero-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--ecos-accent); font-weight: 600; }
+.ecos-hero-tagline { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.2); margin: 0; }
+.ecos-hero-cta {
+  display: inline-flex; align-items: center; gap: 12px; padding: 11px 22px;
+  border: 1px solid var(--ecos-accent); background: transparent; color: var(--ecos-accent);
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase; width: fit-content; margin-top: 10px;
+  cursor: pointer; transition: background 0.35s ease, color 0.35s ease; font-family: inherit;
+}
+.ecos-hero-cta:hover { background: var(--ecos-accent); color: #000; }
+.ecos-scroll-hint {
+  position: absolute; bottom: clamp(36px,5vw,56px); right: clamp(36px,6vw,72px); z-index: 20;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.22);
+  writing-mode: vertical-rl; animation: ecosScrollPulse 3s ease-in-out infinite;
+}
+.ecos-scroll-hint-line {
+  width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  animation: ecosScrollDrop 3s ease-in-out infinite;
+}
+
+/* ---------- song teaser card ---------- */
+.ecos-song {
+  position: relative; background: #0c0c0c; border-bottom: 1px solid rgba(255,255,255,0.05); overflow: hidden;
+}
+.ecos-song-card { position: relative; min-height: clamp(420px,56vh,680px); cursor: pointer; overflow: hidden; display: block; border: none; padding: 0; width: 100%; text-align: left; }
+.ecos-song-card-media { position: absolute; inset: 0; z-index: 0; }
+.ecos-song-card-media img, .ecos-song-card-media .ecos-placeholder {
+  width: 100%; height: 132%; top: -16%; position: absolute; left: 0; object-fit: cover; display: block; filter: brightness(0.8) saturate(0.95);
+}
+.ecos-song-card-media.no-photo {
+  background: linear-gradient(120deg, #8a4a24, #d4874f, #b5652f, #e8a15c);
+  background-size: 300% 300%;
+  animation: ecosGradientMove 12s ease-in-out infinite;
+}
+@keyframes ecosGradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.ecos-song-card-content {
+  position: relative; z-index: 10; min-height: clamp(420px,56vh,680px); display: flex; flex-direction: column;
+  justify-content: space-between; padding: clamp(28px,4vw,48px) clamp(36px,6vw,72px);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 25%, transparent 50%, rgba(0,0,0,0.52) 85%, rgba(0,0,0,0.7) 100%);
+}
+.ecos-song-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.ecos-song-num {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3.5rem,9vw,7rem); font-weight: 900;
+  line-height: 1; letter-spacing: -4px; color: rgba(255,255,255,0.08); user-select: none;
+}
+.ecos-song-credit { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); text-align: right; line-height: 1.6; margin-top: 8px; }
+.ecos-song-bottom { display: flex; flex-direction: column; gap: 10px; }
+.ecos-song-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+.ecos-song-title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem,5.5vw,4.5rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.9; letter-spacing: -2px; color: #fff; margin: 0;
+}
+.ecos-song-artist { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin: 0 0 2px 0; }
+.ecos-song-concept {
+  font-size: clamp(0.8rem,1.2vw,0.95rem); color: rgba(255,255,255,0.75); font-style: italic; line-height: 1.7;
+  max-width: 520px; border-left: 2px solid; padding-left: 14px; margin: 0;
+}
+.ecos-song-cta {
+  display: inline-flex; align-items: center; gap: 12px; padding: 9px 20px;
+  border: 1px solid var(--cta-accent); color: var(--cta-accent);
+  background: transparent; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  width: fit-content; margin-top: 8px; transition: background 0.35s ease, color 0.35s ease;
+}
+.ecos-song-card:hover .ecos-song-cta { background: var(--cta-accent); color: #0f0f0f; }
+.ecos-song-cta-arrow { display: inline-block; transition: transform 0.4s ease; }
+.ecos-song.open .ecos-song-cta-arrow { transform: rotate(180deg); }
+
+/* narrow bar variant (interludes without a photo) */
+.ecos-song-card.no-photo-card { min-height: 0; height: clamp(120px, 16vh, 170px); background: #000; }
+.ecos-song-bar-content {
+  height: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; padding: 0 clamp(36px,6vw,72px);
+}
+.ecos-song-bar-text { flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; }
+.ecos-song-bar-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+.ecos-song-bar-title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.6rem,3.2vw,2.6rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.95; letter-spacing: -1px; color: #fff; margin: 0;
+}
+.ecos-song-bar-artist { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin: 0; }
+.ecos-song-bar-concept {
+  flex: 1; font-size: clamp(0.8rem,1.2vw,0.95rem); color: rgba(255,255,255,0.6); font-style: italic;
+  line-height: 1.6; max-width: 480px; margin: 0; border-left: 2px solid; padding-left: 14px;
+}
+
+/* ---------- detail overlay ---------- */
+.ecos-detail {
+  position: fixed; inset: 0; z-index: 500; background: #0c0c0c;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.4s ease; overflow-y: auto;
+}
+.ecos-song.open .ecos-detail { opacity: 1; visibility: visible; pointer-events: auto; }
+.ecos-detail-header {
+  position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center;
+  padding: 18px clamp(24px,5vw,56px); background: rgba(12,12,12,0.85); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ecos-detail-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
+.ecos-detail-close {
+  width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(255,255,255,0.6);
+  font-size: 16px; background: none; transition: border-color 0.3s ease, color 0.3s ease;
+}
+.ecos-detail-close:hover { border-color: var(--dot-accent); color: var(--dot-accent); }
+.ecos-detail-body { background: #0c0c0c; overflow: hidden; min-height: 0; }
+
+/* concept block */
+.ecos-concept-grid { display: grid; min-height: 60vh; }
+.ecos-concept-media { position: relative; overflow: visible; align-self: stretch; display: flex; align-items: center; }
+.ecos-concept-media video {
+  width: 100%; aspect-ratio: 1/1; height: auto; object-fit: cover; display: block; margin: 0; border-radius: 20px;
+}
+.ecos-concept-media .ecos-placeholder, .ecos-concept-media img { width: 100%; height: 100%; }
+.ecos-concept-text {
+  padding: clamp(32px,5vw,56px) clamp(40px,6vw,72px); display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 24px; background: #0c0c0c; height: 100%; justify-content: space-between;
+}
+.ecos-concept-text-top { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
+.ecos-concept-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+.ecos-concept-dir { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #444; }
+.ecos-concept-mid { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.ecos-concept-mid h2 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3.5rem,7vw,6.5rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.88; color: #f5f5f5; letter-spacing: -2px; margin: 0;
+}
+.ecos-concept-body { font-size: clamp(0.85rem,1.3vw,1rem); color: #b8b8b8; line-height: 1.85; max-width: 440px; margin: 0; }
+.ecos-concept-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06); width: 100%;
+}
+.ecos-badge {
+  display: inline-flex; align-items: center; padding: 6px 14px; font-size: 10px;
+  border: 1px solid var(--badge-accent); color: var(--badge-accent);
+  letter-spacing: 2px; text-transform: uppercase; cursor: default; background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.ecos-badge:hover { background: var(--badge-accent); color: #0f0f0f; }
+.ecos-concept-credit { text-align: right; }
+.ecos-concept-credit strong { display: block; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #f5f5f5; font-weight: 600; }
+.ecos-concept-credit span { font-size: 10px; letter-spacing: 1px; color: #444; text-transform: uppercase; }
+
+/* prologue / videoclip blocks */
+.ecos-video-block { width: 100%; position: relative; overflow: hidden; background: #000; }
+.ecos-video-block-head {
+  display: flex; justify-content: space-between; align-items: center; padding: 20px clamp(36px,6vw,72px);
+  background: #0c0c0c; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+}
+.ecos-video-block-head span:last-child { letter-spacing: 2px; color: #444; }
+.ecos-video-frame { position: relative; width: 100%; height: clamp(360px,56vw,80vh); background: #000; overflow: hidden; }
+.ecos-video-frame.ratio-16-9 { height: auto; aspect-ratio: 16/9; }
+.ecos-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.ecos-video-poster { position: absolute; inset: 0; cursor: pointer; }
+.ecos-video-poster img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.95); }
+.ecos-video-poster.coming-soon { cursor: default; }
+.ecos-video-poster.coming-soon img { filter: brightness(0.7) saturate(0.55); }
+.ecos-video-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; }
+.ecos-video-poster.coming-soon .ecos-video-overlay { background: rgba(0,0,0,0.35); }
+.ecos-play-btn {
+  width: 80px; height: 80px; border: 1.5px solid rgba(255,255,255,0.7); border-radius: 50%;
+  background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; padding-left: 4px;
+}
+.ecos-play-btn svg { width: 28px; height: 28px; fill: rgba(255,255,255,0.85); }
+.ecos-comingsoon-badge { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.ecos-comingsoon-badge .label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; }
+.ecos-comingsoon-badge .title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.4rem,3vw,2.2rem); font-weight: 900;
+  text-transform: uppercase; letter-spacing: -1px; color: rgba(255,255,255,0.6);
+}
+.ecos-comingsoon-badge .sub {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.12); padding: 5px 14px;
+}
+
+/* historia block */
+.ecos-historia { position: relative; height: 70vh; min-height: 480px; }
+.ecos-historia-media { position: absolute; inset: 0; }
+.ecos-historia-media img, .ecos-historia-media .ecos-placeholder { width: 100%; height: 100%; }
+.ecos-historia-overlay {
+  position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.02) 55%, rgba(0,0,0,0.1) 100%);
+  display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto; padding: clamp(28px,5vw,56px);
+  gap: 0 24px; pointer-events: none;
+}
+.ecos-historia-top {
+  grid-column: 1 / -1; grid-row: 1; display: flex; justify-content: space-between; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ecos-historia-text { grid-column: 1; grid-row: 3; align-self: flex-end; max-width: 560px; }
+.ecos-historia-text p { color: rgba(255,255,255,0.82); font-size: clamp(0.85rem,1.4vw,1rem); line-height: 1.9; margin: 0; }
+.ecos-historia-tag {
+  grid-column: 2; grid-row: 3; align-self: flex-end; font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem,4.5vw,3.5rem); font-weight: 900; text-transform: lowercase; letter-spacing: -1px;
+  white-space: nowrap; padding-left: 24px;
+}
+
+/* mood block */
+.ecos-mood-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 62vh; background: #0c0c0c; }
+.ecos-mood-media { overflow: hidden; position: relative; align-self: center; }
+.ecos-mood-mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: #000; }
+.ecos-mood-mosaic img, .ecos-mood-mosaic .ecos-placeholder { aspect-ratio: 1/1; width: 100%; }
+.ecos-mood-text {
+  display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+  padding: clamp(36px,6vw,64px); gap: 16px; background: #0c0c0c;
+}
+.ecos-mood-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
+.ecos-mood-text h2 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3rem,7vw,6rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.85; letter-spacing: -2px; color: #f5f5f5; margin: 0; white-space: nowrap;
+}
+.ecos-mood-tagline { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #444; margin-top: 4px; }
+.ecos-mood-story { font-size: clamp(0.85rem,1.3vw,0.95rem); line-height: 1.9; color: #b8b8b8; max-width: 440px; margin-top: 12px; }
+
+/* escuchar block */
+.ecos-escuchar { padding: clamp(56px,10vw,100px) clamp(40px,8vw,80px); background: #0c0c0c; border-top: 1px solid rgba(255,255,255,0.04); display: flex; flex-direction: column; gap: 28px; }
+.ecos-escuchar-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; }
+.ecos-escuchar-title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem,5.5vw,4.5rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.88; letter-spacing: -2px; color: #f5f5f5; max-width: 900px;
+}
+.ecos-escuchar-grid { display: grid; gap: 32px; align-items: start; }
+.ecos-escuchar-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.ecos-escuchar-grid.cols-1 { grid-template-columns: 1fr; }
+.ecos-spotify-embed { border-radius: 12px; width: 100%; height: 352px; border: none; }
+.ecos-lyrics-box {
+  background: #141414; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px 28px;
+  height: 352px; display: flex; flex-direction: column; gap: 14px;
+}
+.ecos-lyrics-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; flex-shrink: 0; }
+.ecos-lyrics-scroll { overflow-y: auto; flex: 1; padding-right: 8px; }
+.ecos-lyrics-scroll p { font-size: 0.9rem; line-height: 1.9; color: #c9c9c9; white-space: pre-line; margin: 0; }
+.ecos-escuchar-pending {
+  border: 1px dashed rgba(255,255,255,0.15); border-radius: 12px; padding: 32px; text-align: center;
+  color: rgba(255,255,255,0.35); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+}
+
+/* custom audio player */
+.ecos-player {
+  background: #141414; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;
+  height: 352px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 24px; padding: 24px;
+}
+.ecos-player-toggle {
+  width: 64px; height: 64px; border-radius: 50%; background: transparent;
+  border: 1.5px solid var(--player-accent); color: var(--player-accent);
+  font-size: 18px; display: flex; align-items: center; justify-content: center;
+  padding-left: 4px; cursor: pointer; transition: background 0.3s ease, color 0.3s ease; flex-shrink: 0;
+}
+.ecos-player-toggle:hover { background: var(--player-accent); color: #0f0f0f; }
+.ecos-player-toggle.playing { padding-left: 0; }
+.ecos-player-toggle.disabled { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.25); cursor: default; }
+.ecos-player-body { width: 100%; max-width: 320px; display: flex; flex-direction: column; gap: 10px; }
+.ecos-player-bar {
+  width: 100%; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.1); cursor: pointer; position: relative;
+}
+.ecos-player-pending .ecos-player-bar { cursor: default; }
+.ecos-player-bar-fill { height: 100%; width: 0%; border-radius: 999px; background: #666; transition: width 0.1s linear; }
+.ecos-player-time { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 1px; color: rgba(255,255,255,0.4); }
+.ecos-player-pending .ecos-player-time { justify-content: center; text-transform: uppercase; letter-spacing: 2px; }
+.ecos-lyrics-pending .ecos-lyrics-scroll p { color: rgba(255,255,255,0.3); font-style: italic; }
+
+/* placeholder blocks (missing media) */
+.ecos-placeholder {
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px;
+  color: rgba(0,0,0,0.55); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+}
+
+/* ---------- footer ---------- */
+.ecos-footer { background: #080806; border-top: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
+.ecos-footer-title-block { padding: clamp(60px,10vw,100px) clamp(40px,8vw,80px) clamp(36px,5vw,56px); }
+.ecos-footer-eyebrow { display: block; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--ecos-accent); margin-bottom: 16px; }
+.ecos-footer-heading {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3.5rem,9vw,7.5rem); font-weight: 900;
+  text-transform: uppercase; line-height: 0.85; letter-spacing: -3px; color: #f5f5f5; margin: 0;
+}
+.ecos-footer-artist { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 20px; display: block; }
+.ecos-footer-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 0 clamp(40px,8vw,80px); }
+.ecos-footer-links { padding: clamp(24px,4vw,36px) clamp(40px,8vw,80px); display: flex; flex-wrap: wrap; gap: 10px; }
+.ecos-footer-link-btn {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border: 1px solid rgba(255,255,255,0.1);
+  background: transparent; color: rgba(255,255,255,0.4); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; font-family: inherit; text-decoration: none; transition: border-color 0.3s ease, color 0.3s ease;
+}
+.ecos-footer-link-btn:hover { border-color: var(--ecos-accent); color: var(--ecos-accent); }
+.ecos-footer-grid { padding: clamp(40px,6vw,60px) clamp(40px,8vw,80px); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.ecos-footer-col-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--ecos-accent); font-weight: 600; margin-bottom: 28px; display: block; }
+.ecos-footer-item { margin-bottom: 24px; }
+.ecos-footer-item-label { display: block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.22); margin-bottom: 6px; }
+.ecos-footer-item-value { display: block; font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+.ecos-footer-contact-link { display: block; text-decoration: none; margin-bottom: 24px; transition: opacity 0.3s ease; }
+.ecos-footer-contact-link:hover { opacity: 0.7; }
+.ecos-footer-contact-link .value { font-size: 14px; color: rgba(255,255,255,0.65); letter-spacing: 0.3px; }
+.ecos-footer-bottom {
+  padding: 20px clamp(40px,8vw,80px); display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 8px; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.15);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 760px) {
+  .ecos-concept-grid, .ecos-mood-grid { grid-template-columns: 1fr !important; }
+  .ecos-concept-grid > *, .ecos-mood-grid > * { order: 0 !important; }
+  .ecos-escuchar-grid.cols-2 { grid-template-columns: 1fr; }
+  .ecos-footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .ecos-navdots { display: none; }
+}
