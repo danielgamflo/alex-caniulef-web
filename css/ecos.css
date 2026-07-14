@@ -48,7 +48,6 @@
 .ecos-logo { display: flex; align-items: center; text-decoration: none; }
 .ecos-logo img { height: 36px; width: auto; opacity: 0.88; transition: opacity 0.3s ease; }
 .ecos-logo:hover img { opacity: 1; }
-.ecos-header-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
 
 .ecos-navdots {
   position: fixed; right: 30px; top: 50%; transform: translateY(-50%); z-index: 100;
@@ -397,9 +396,7 @@
   .ecos-footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .ecos-navdots { display: none; }
 
-  /* header label wraps to 2 lines on narrow screens, overflowing the fixed 56px bar and
-     colliding with the hero's own top row — drop the label and give the hero more clearance */
-  .ecos-header-label { display: none; }
+  /* the hero's own top padding is shorter than the fixed 56px header, give it more clearance */
   .ecos-hero-content { padding-top: 88px; }
 
   /* song credit label is redundant with the header on small screens, and sits on top of the photo's focal point */

@@ -438,7 +438,6 @@ function ecosBuildMarkup() {
           <img src="assets/logo-alex.png" alt="Alex Caniulef">
         </a>
       </div>
-      <span class="ecos-header-label">Ecos de la Casa</span>
     </header>
 
     <nav class="ecos-navdots" id="ecos-navdots"></nav>
@@ -496,6 +495,7 @@ function ecosInit() {
   const progress = document.getElementById('ecos-progress');
   const navdots = document.getElementById('ecos-navdots');
   const heroImg = document.getElementById('ecos-hero-img');
+  const parallaxEls = view.querySelectorAll('.ecos-song-card-media img, .ecos-song-card-media .ecos-placeholder');
 
   const sectionIds = ['ecos-hero', ...ECOS_SONGS.map((_, i) => 'ecos-song-' + i), 'ecos-footer'];
   sectionIds.forEach((id, i) => {
@@ -606,7 +606,11 @@ function ecosInit() {
     if (toggle) { toggle.textContent = '▶'; toggle.classList.remove('playing'); }
   }, true);
 
-  ecosScrollHandler = () => {
+  const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+  let ecosScrollTicking = false;
+
+  const runScrollUpdate = () => {
+    ecosScrollTicking = false;
     const vh = window.innerHeight;
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - vh;
@@ -620,20 +624,26 @@ function ecosInit() {
       const offset = Math.max(-90, Math.min(90, ((center - vh / 2) / vh) * 140));
       heroImg.style.transform = `translateY(${offset}px)`;
     }
-    view.querySelectorAll('.ecos-song-card-media img, .ecos-song-card-media .ecos-placeholder').forEach((el) => {
+    parallaxEls.forEach((el) => {
       const r = el.parentElement.getBoundingClientRect();
       const center = r.top + r.height / 2;
       const offset = Math.max(-60, Math.min(60, ((center - vh / 2) / vh) * 130));
       el.style.transform = `translateY(${offset}px)`;
     });
 
-    const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
     const centerY = scrollTop + vh / 2;
     let current = 0;
     sections.forEach((sec, i) => {
       if (centerY >= sec.offsetTop && centerY < sec.offsetTop + sec.offsetHeight) current = i;
     });
     dotEls.forEach((dot, i) => dot.classList.toggle('active', i === current));
+  };
+
+  ecosScrollHandler = () => {
+    if (!ecosScrollTicking) {
+      ecosScrollTicking = true;
+      requestAnimationFrame(runScrollUpdate);
+    }
   };
 
   ecosKeydownHandler = (e) => {
