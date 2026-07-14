@@ -107,7 +107,7 @@ const ECOS_SONGS = [
     flip: true, eyebrow: 'Canción Final 07', dirLabel: 'Alex Caniulef',
     body: 'Gratitud es la conclusión narrativa de "Ecos de la Casa". Grabada en el Salto del Mili Mili, al sur de Chile, esta canción cierra el recorrido: después de la búsqueda, la declaración de fe, la adoración y la intimidad, llegamos a un lugar de agradecimiento simple, profundo y verdadero.',
     badge: 'Cierre · Paz · Gratitud', artistSub: 'Duración: 4:08',
-    historiaPage: 'Pág. 07', historiaText: 'Grabada en los mismos locales de Atacama, pero en un momento de quietud. La canción captura el atardecer en el desierto, el silencio que sigue a la tormenta, la paz que solo viene después del viaje.', historiaTag: '#gratitud',
+    historiaPage: 'Pág. 07', historiaText: 'Grabada en el Salto del Mili Mili, al sur de Chile, en un momento de quietud. La canción captura el sonido del agua y el bosque, el silencio que sigue a la tormenta, la paz que solo viene después del viaje.', historiaTag: '#gratitud',
     moodHeadlineHtml: 'GRATI-<br>TUD', moodTagline: 'Cierre · Esperanza · Abrazo',
     playerTitleHtml: 'Gratitud',
   },
