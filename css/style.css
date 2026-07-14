@@ -404,4 +404,6 @@ h1, h2 {
   .contact-box { grid-template-columns: 1fr; }
   .album-detail { grid-template-columns: 1fr; }
   .nav-links { gap: 18px; }
+  .hero-media { height: 100vw; min-height: 0; max-height: 480px; }
+  .hero-content { margin-top: -90px; }
 }
