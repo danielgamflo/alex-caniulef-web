@@ -26,7 +26,7 @@ const ECOS_SONGS = [
   {
     num: '02', accent: '#c4876a',
     cardImg: 'assets/ecos-de-la-casa/cantar-portada.jpg', cardLabel: 'Canción',
-    title: 'Yo Quiero Cantar de Tu Amor', titleHtml: 'Yo Quiero<br>Cantar de<br>Tu Amor', artist: 'Alex Caniulef',
+    title: 'Yo Quiero Cantar de Tu Amor', titleHtml: 'Yo Quiero <br>Cantar de <br>Tu Amor', artist: 'Alex Caniulef',
     concept: 'El desierto es ese lugar donde buscas... y el eco solo te devuelve silencio. Y aun así, hay razones para cantar.',
     ctaLabel: 'Explorar',
     videoId: 'YIfLozUwgBU', videoPoster: 'assets/ecos-de-la-casa/cantar-poster.jpg',
@@ -46,7 +46,7 @@ const ECOS_SONGS = [
   {
     num: '03', accent: '#b08c5a',
     cardImg: 'assets/ecos-de-la-casa/dios-portada.jpg', cardLabel: 'Canción · Feat. Cami Sepúlveda',
-    title: 'Dios No Está en Mi Contra', titleHtml: 'Dios No<br>Está en<br>Mi Contra', artist: 'Alex Caniulef & Cami Sepúlveda',
+    title: 'Dios No Está en Mi Contra', titleHtml: 'Dios No <br>Está en <br>Mi Contra', artist: 'Alex Caniulef & Cami Sepúlveda',
     concept: 'Una declaración de fe en tiempos de incertidumbre. Cuando todo parece estar en contra, la verdad permanece.',
     ctaLabel: 'Explorar',
     videoId: 'L7p13Sn_pzk', videoPoster: 'assets/ecos-de-la-casa/dios-poster.jpg',
@@ -73,7 +73,7 @@ const ECOS_SONGS = [
   {
     num: '05', accent: '#c8a040',
     cardImg: 'assets/ecos-de-la-casa/digno-de-mi-doracion.jpg', cardLabel: 'Canción · Feat. Israel Oñate',
-    title: 'Digno de Adoración', titleHtml: 'Digno de<br>Adoración', artist: 'Alex Caniulef & Israel Oñate',
+    title: 'Digno de Adoración', titleHtml: 'Digno de <br>Adoración', artist: 'Alex Caniulef & Israel Oñate',
     concept: 'Una explosión de adoración genuina. Israel suma su voz para declarar la dignidad de Dios, en armonía y unidad espiritual.',
     ctaLabel: 'Explorar',
     videoId: null, videoPoster: 'assets/ecos-de-la-casa/digno-de-mi-doracion.jpg', comingSoon: true,
