@@ -397,6 +397,11 @@
   .ecos-footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .ecos-navdots { display: none; }
 
+  /* header label wraps to 2 lines on narrow screens, overflowing the fixed 56px bar and
+     colliding with the hero's own top row — drop the label and give the hero more clearance */
+  .ecos-header-label { display: none; }
+  .ecos-hero-content { padding-top: 88px; }
+
   /* song credit label is redundant with the header on small screens, and sits on top of the photo's focal point */
   .ecos-song-credit { display: none; }
 
