@@ -395,6 +395,9 @@
   .ecos-footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .ecos-navdots { display: none; }
 
+  /* full 100vh made the hero far too tall/narrow on phones, cropping most of the photo away */
+  .ecos-hero, .ecos-hero-content { height: 130vw; min-height: 520px; max-height: 640px; }
+
   /* the hero's own top padding is shorter than the fixed 56px header, give it more clearance */
   .ecos-hero-content { padding-top: 88px; }
 
