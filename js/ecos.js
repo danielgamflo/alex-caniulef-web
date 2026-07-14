@@ -446,10 +446,6 @@ function ecosBuildMarkup() {
       <div class="ecos-hero-media"><img id="ecos-hero-img" src="assets/ecos-de-la-casa/ecos-portada-hero.jpg" alt="Ecos de la Casa"></div>
       <div class="ecos-hero-watermark">Ecos</div>
       <div class="ecos-hero-content">
-        <div class="ecos-hero-meta-row">
-          <span>Álbum de Adoración · 2026 · Ecos de la Casa</span>
-          <span>Alex Caniulef</span>
-        </div>
         <div class="ecos-hero-info">
           <span class="ecos-hero-eyebrow">Álbum de Adoración</span>
           <p class="ecos-hero-tagline">7 Canciones · Grabado entre paisajes y hogares de Chile</p>
