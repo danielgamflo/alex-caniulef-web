@@ -443,7 +443,8 @@ function ecosBuildMarkup() {
     <nav class="ecos-navdots" id="ecos-navdots"></nav>
 
     <section class="ecos-hero" id="ecos-hero">
-      <div class="ecos-hero-media"><img id="ecos-hero-img" src="assets/ecos-de-la-casa/ecos-portada-hero.jpg" alt="Ecos de la Casa"></div>
+      <div class="ecos-hero-media"><img id="ecos-hero-img" src="assets/ecos-de-la-casa/Portada_Ecos_de_la_Casa_Limpia.png" alt="Ecos de la Casa"></div>
+      <img class="ecos-hero-logo" src="assets/ecos-de-la-casa/Logo-Efecto-Ecos-de-la-Casa-blanco.png" alt="Ecos de la Casa">
       <div class="ecos-hero-watermark">Ecos</div>
       <div class="ecos-hero-content">
         <div class="ecos-hero-info">
