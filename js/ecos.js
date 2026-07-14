@@ -56,6 +56,7 @@ const ECOS_SONGS = [
     historiaPage: 'Pág. 03', historiaText: 'Esta canción surge de la convicción de que incluso en nuestros momentos más oscuros, Dios no está en contra nuestro. Es un himno de confianza, de rendición, de fe inquebrantable. La voz de Cami añade una dimensión emocional profunda.', historiaTag: '#declaración',
     moodHeadlineHtml: 'CON-<br>FIANZA', moodTagline: 'Fe · Rendición · Certeza',
     playerTitleHtml: 'Dios No Está<br>en Mi Contra',
+    spotifyUrl: 'https://open.spotify.com/embed/track/6K8GOkxxQUUcZTG4pNT39l?utm_source=generator',
   },
   {
     num: '04', accent: '#9aacac', noPhoto: true,
@@ -67,7 +68,7 @@ const ECOS_SONGS = [
     body: 'Los interludios en "Ecos de la Casa" funcionan como pausas contemplativas. "Roca Firme" es una invitación a descansar, a encontrar estabilidad. Piano ambiental y texturas de sintetizador crean un espacio de silencio.',
     badge: 'Instrumental · Contemplación', artistSub: 'Duración: 2:30',
     playerTitleHtml: 'Roca Firme<br>(Interludio)',
-    audioSrc: null, // ej: 'assets/ecos-de-la-casa/audio/roca-firme.mp3'
+    spotifyUrl: 'https://open.spotify.com/embed/track/37aiBLuOQFT41NOCPtb31C?utm_source=generator',
     lyrics: null,
   },
   {
@@ -83,6 +84,7 @@ const ECOS_SONGS = [
     historiaPage: 'Pág. 05', historiaText: 'Israel colaboró en la traducción y adaptación de esta canción, asegurando autenticidad cultural y espiritual. La armonía entre las voces refleja la unidad del cuerpo de Cristo, un llamado a adorar juntos.', historiaTag: '#adoración',
     moodHeadlineHtml: 'DIGNIDAD', moodTagline: 'Comunidad · Unidad · Gloria',
     playerTitleHtml: 'Digno de<br>Adoración',
+    spotifyUrl: 'https://open.spotify.com/embed/track/3whnBVGEI3Bis9fTAoVQUL?utm_source=generator',
   },
   {
     num: '06', accent: '#a8929a', noPhoto: true,
@@ -94,7 +96,7 @@ const ECOS_SONGS = [
     body: 'Este interludio marca un giro en la narrativa del álbum. Pasamos del "nosotros adoramos" al "yo adoro". Una invitación a la intimidad personal con Dios y a aceptar la responsabilidad individual en la adoración.',
     badge: 'Íntimo · Personal', artistSub: 'Duración: 3:15',
     playerTitleHtml: 'Digno de Mi<br>Adoración',
-    audioSrc: null, // ej: 'assets/ecos-de-la-casa/audio/digno-de-mi-adoracion.mp3'
+    spotifyUrl: 'https://open.spotify.com/embed/track/1Gbt39w0pDm8aMncSvWYib?utm_source=generator',
     lyrics: null,
   },
   {
@@ -110,6 +112,7 @@ const ECOS_SONGS = [
     historiaPage: 'Pág. 07', historiaText: 'Grabada en el Salto del Mili Mili, al sur de Chile, en un momento de quietud. La canción captura el sonido del agua y el bosque, el silencio que sigue a la tormenta, la paz que solo viene después del viaje.', historiaTag: '#gratitud',
     moodHeadlineHtml: 'GRATI-<br>TUD', moodTagline: 'Cierre · Esperanza · Abrazo',
     playerTitleHtml: 'Gratitud',
+    spotifyUrl: 'https://open.spotify.com/embed/track/1N624pcSy9UkkyKiKzeUYA?utm_source=generator',
   },
 ];
 
@@ -333,7 +336,7 @@ function ecosSongDetailHTML(song, i) {
         </div>
         <div class="ecos-detail-body">
           ${ecosConceptBlockHTML(song)}
-          ${ecosPlayerEscucharHTML(song)}
+          ${ecosEscucharBlockHTML(song)}
         </div>
       </div>`;
   }
