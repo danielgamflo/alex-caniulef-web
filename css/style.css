@@ -244,37 +244,76 @@ h1, h2 {
 /* ---------- SHOWS ---------- */
 .shows-section { padding: 0 5vw 90px; }
 .shows-section h2 { font-size: clamp(30px, 4vw, 46px); margin: 0 0 22px; }
-.show-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 28px 32px;
+.show-spotlight {
+  position: relative;
+  min-height: 380px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
 }
-.show-info { display: flex; align-items: center; gap: 20px; }
+.show-spotlight-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,15,15,0.1) 0%, rgba(15,15,15,0.6) 55%, rgba(15,15,15,0.96) 100%);
+}
+.show-spotlight-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(24px,4vw,44px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.show-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.show-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: showPulse 1.8s ease-in-out infinite;
+}
+@keyframes showPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,128,56,0.5); }
+  50% { opacity: 0.5; box-shadow: 0 0 0 6px rgba(255,128,56,0); }
+}
+.show-info { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
 .show-date {
   font-family: 'Anton', sans-serif;
-  font-size: 28px;
+  font-size: 40px;
   color: var(--accent);
   line-height: 1;
   text-align: center;
 }
 .show-date span {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
 }
 .show-title {
   font-family: 'Anton', sans-serif;
-  font-size: 22px;
+  font-size: clamp(28px, 4vw, 44px);
   text-transform: uppercase;
 }
-.show-sub { color: var(--text-muted); font-size: 14px; margin-top: 2px; }
+.show-sub { color: var(--text-soft); font-size: 15px; margin-top: 2px; }
+.show-cta { margin-top: 6px; }
 
 /* ---------- CONTACT ---------- */
 .contact-section { padding: 0 5vw 70px; }
