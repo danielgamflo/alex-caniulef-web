@@ -40,11 +40,11 @@
 }
 .ecos-header-left { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
 .ecos-back {
-  background: none; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #f5f5f5;
   font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px;
-  border-radius: 999px; cursor: pointer; font-family: inherit; transition: border-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px; cursor: pointer; font-family: inherit; transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
-.ecos-back:hover { border-color: var(--ecos-accent); color: var(--ecos-accent); }
+.ecos-back:hover { background: var(--ecos-accent); border-color: var(--ecos-accent); color: #000; }
 .ecos-logo { display: flex; align-items: center; text-decoration: none; }
 .ecos-logo img { height: 36px; width: auto; opacity: 0.88; transition: opacity 0.3s ease; }
 .ecos-logo:hover img { opacity: 1; }
@@ -189,11 +189,11 @@
 }
 .ecos-detail-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
 .ecos-detail-close {
-  width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
-  display: flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(255,255,255,0.6);
-  font-size: 16px; background: none; transition: border-color 0.3s ease, color 0.3s ease;
+  width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; color: #f5f5f5;
+  font-size: 18px; font-weight: 600; background: rgba(255,255,255,0.12); transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
-.ecos-detail-close:hover { border-color: var(--dot-accent); color: var(--dot-accent); }
+.ecos-detail-close:hover { background: var(--dot-accent); border-color: var(--dot-accent); color: #000; }
 .ecos-detail-body { background: #0c0c0c; overflow: hidden; min-height: 0; }
 
 /* concept block */
