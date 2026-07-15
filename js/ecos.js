@@ -40,7 +40,7 @@ const ECOS_SONGS = [
     conceptIsVideo: true, conceptVideoSrc: 'assets/ecos-de-la-casa/concepto-cantar-loop-v2.mp4',
     historiaSrc: 'assets/ecos-de-la-casa/historia-cantar.jpg',
     spotifyUrl: 'https://open.spotify.com/embed/track/04NkjPpmSItiji7f7CU5cz?utm_source=generator&theme=0',
-    lyrics: 'El mundo\nBusqué\nY no pudo satisfacerme\nA donde más\nYo iré\nTu amor es para siempre\n\nCamino y verdad\nTú me guiarás\nY nada nos podrá separar\nTú eres la luz\nMi Rey oh Jesús\n\nYo quiero cantar de tu amor\nYo quiero cantar de tu amor\nTus promesas no tienen final\nTú las cumplirás\nY eso bastará\nYo quiero cantar de tu amor\n\nY al morir\nPensaste en mí\nAunque yo no lo merecía\nGracias a ti\nPuedo vivir\nTu propósito en mi vida\n\nExisten mil razones\nPara estar perdido\nMas tengo un futuro\nY solo es por Cristo',
+    lyrics: 'El mundo busqué y no pudo satisfacerme\nA donde más yo iré\nTu amor es para siempre\nCamino y verdad, tú me guiarás\nY nada nos podrá separar\nTú eres la luz, mi Rey oh Jesús\n\nYo quiero cantar de tu amor\nYo quiero cantar de tu amor\nTus promesas no tienen final\nTú las cumplirás y eso bastará\nYo quiero cantar de tu amor\n\nAl morir pensaste en mí\nAunque yo no lo merecía\nGracias a ti puedo vivir\nUn propósito en mi vida\nCamino y verdad, tú me guiarás\nY nada nos podrá separar\nTú eres la luz, mi Rey oh Jesús\n\nExisten mil razones para estar perdido\nMás tengo un futuro y solo es por Cristo',
     moodSrc1: 'assets/ecos-de-la-casa/mood-cantar-1.jpg', moodSrc2: 'assets/ecos-de-la-casa/mood-cantar-2.jpg', moodSrc3: 'assets/ecos-de-la-casa/mood-cantar-3.jpg', moodSrc4: 'assets/ecos-de-la-casa/mood-cantar-4.jpg',
   },
   {
