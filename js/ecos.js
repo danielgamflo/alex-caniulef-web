@@ -39,7 +39,7 @@ const ECOS_SONGS = [
     playerTitleHtml: 'Yo Quiero Cantar<br>de Tu Amor',
     conceptIsVideo: true, conceptVideoSrc: 'assets/ecos-de-la-casa/concepto-cantar-loop-v2.mp4',
     historiaSrc: 'assets/ecos-de-la-casa/historia-cantar.jpg',
-    spotifyUrl: 'https://open.spotify.com/embed/track/04NkjPpmSItiji7f7CU5cz?utm_source=generator',
+    spotifyUrl: 'https://open.spotify.com/embed/track/04NkjPpmSItiji7f7CU5cz?utm_source=generator&theme=0',
     lyrics: 'El mundo\nBusqué\nY no pudo satisfacerme\nA donde más\nYo iré\nTu amor es para siempre\n\nCamino y verdad\nTú me guiarás\nY nada nos podrá separar\nTú eres la luz\nMi Rey oh Jesús\n\nYo quiero cantar de tu amor\nYo quiero cantar de tu amor\nTus promesas no tienen final\nTú las cumplirás\nY eso bastará\nYo quiero cantar de tu amor\n\nY al morir\nPensaste en mí\nAunque yo no lo merecía\nGracias a ti\nPuedo vivir\nTu propósito en mi vida\n\nExisten mil razones\nPara estar perdido\nMas tengo un futuro\nY solo es por Cristo',
     moodSrc1: 'assets/ecos-de-la-casa/mood-cantar-1.jpg', moodSrc2: 'assets/ecos-de-la-casa/mood-cantar-2.jpg', moodSrc3: 'assets/ecos-de-la-casa/mood-cantar-3.jpg', moodSrc4: 'assets/ecos-de-la-casa/mood-cantar-4.jpg',
   },
@@ -56,7 +56,7 @@ const ECOS_SONGS = [
     historiaPage: 'Pág. 03', historiaText: 'Esta canción surge de la convicción de que incluso en nuestros momentos más oscuros, Dios no está en contra nuestro. Es un himno de confianza, de rendición, de fe inquebrantable. La voz de Cami añade una dimensión emocional profunda.', historiaTag: '#declaración',
     moodHeadlineHtml: 'CON-<br>FIANZA', moodTagline: 'Fe · Rendición · Certeza',
     playerTitleHtml: 'Dios No Está<br>en Mi Contra',
-    spotifyUrl: 'https://open.spotify.com/embed/track/6K8GOkxxQUUcZTG4pNT39l?utm_source=generator',
+    spotifyUrl: 'https://open.spotify.com/embed/track/6K8GOkxxQUUcZTG4pNT39l?utm_source=generator&theme=0',
   },
   {
     num: '04', accent: '#9aacac', noPhoto: true,
@@ -68,7 +68,7 @@ const ECOS_SONGS = [
     body: 'Los interludios en "Ecos de la Casa" funcionan como pausas contemplativas. "Roca Firme" es una invitación a descansar, a encontrar estabilidad. Piano ambiental y texturas de sintetizador crean un espacio de silencio.',
     badge: 'Instrumental · Contemplación', artistSub: 'Duración: 2:30',
     playerTitleHtml: 'Roca Firme<br>(Interludio)',
-    spotifyUrl: 'https://open.spotify.com/embed/track/37aiBLuOQFT41NOCPtb31C?utm_source=generator',
+    spotifyUrl: 'https://open.spotify.com/embed/track/37aiBLuOQFT41NOCPtb31C?utm_source=generator&theme=0',
     lyrics: null,
   },
   {
@@ -84,7 +84,7 @@ const ECOS_SONGS = [
     historiaPage: 'Pág. 05', historiaText: 'Israel colaboró en la traducción y adaptación de esta canción, asegurando autenticidad cultural y espiritual. La armonía entre las voces refleja la unidad del cuerpo de Cristo, un llamado a adorar juntos.', historiaTag: '#adoración',
     moodHeadlineHtml: 'DIGNIDAD', moodTagline: 'Comunidad · Unidad · Gloria',
     playerTitleHtml: 'Digno de<br>Adoración',
-    spotifyUrl: 'https://open.spotify.com/embed/track/3whnBVGEI3Bis9fTAoVQUL?utm_source=generator',
+    spotifyUrl: 'https://open.spotify.com/embed/track/3whnBVGEI3Bis9fTAoVQUL?utm_source=generator&theme=0',
   },
   {
     num: '06', accent: '#a8929a', noPhoto: true,
@@ -96,7 +96,7 @@ const ECOS_SONGS = [
     body: 'Este interludio marca un giro en la narrativa del álbum. Pasamos del "nosotros adoramos" al "yo adoro". Una invitación a la intimidad personal con Dios y a aceptar la responsabilidad individual en la adoración.',
     badge: 'Íntimo · Personal', artistSub: 'Duración: 3:15',
     playerTitleHtml: 'Digno de Mi<br>Adoración',
-    spotifyUrl: 'https://open.spotify.com/embed/track/1Gbt39w0pDm8aMncSvWYib?utm_source=generator',
+    spotifyUrl: 'https://open.spotify.com/embed/track/1Gbt39w0pDm8aMncSvWYib?utm_source=generator&theme=0',
     lyrics: null,
   },
   {
@@ -112,7 +112,7 @@ const ECOS_SONGS = [
     historiaPage: 'Pág. 07', historiaText: 'Grabada en el Salto del Mili Mili, al sur de Chile, en un momento de quietud. La canción captura el sonido del agua y el bosque, el silencio que sigue a la tormenta, la paz que solo viene después del viaje.', historiaTag: '#gratitud',
     moodHeadlineHtml: 'GRATI-<br>TUD', moodTagline: 'Cierre · Esperanza · Abrazo',
     playerTitleHtml: 'Gratitud',
-    spotifyUrl: 'https://open.spotify.com/embed/track/1N624pcSy9UkkyKiKzeUYA?utm_source=generator',
+    spotifyUrl: 'https://open.spotify.com/embed/track/1N624pcSy9UkkyKiKzeUYA?utm_source=generator&theme=0',
   },
 ];
 
@@ -379,12 +379,6 @@ function ecosSongDetailHTML(song, i) {
 function ecosFooterHTML() {
   return `
     <footer class="ecos-footer" id="ecos-footer">
-      <div class="ecos-footer-title-block">
-        <span class="ecos-footer-eyebrow">Álbum de Adoración · 2026</span>
-        <h2 class="ecos-footer-heading">Ecos de<br>la Casa</h2>
-        <span class="ecos-footer-artist">Alex Caniulef</span>
-      </div>
-      <div class="ecos-footer-divider"></div>
       <div class="ecos-footer-links">
         <a class="ecos-footer-link-btn" href="https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl" target="_blank" rel="noopener">♪ &nbsp;Spotify</a>
         <a class="ecos-footer-link-btn" href="https://music.apple.com/us/artist/alex-caniulef/1314296522" target="_blank" rel="noopener">♫ &nbsp;Apple Music</a>
