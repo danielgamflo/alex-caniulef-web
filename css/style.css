@@ -396,6 +396,8 @@ h1, h2 {
   max-width: 560px;
   margin: 0 0 30px;
 }
+.album-detail-player { max-width: 560px; margin-top: 30px; }
+.album-spotify-embed { width: 100%; height: 352px; border: none; border-radius: 12px; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 720px) {
