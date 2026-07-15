@@ -57,6 +57,7 @@ const ECOS_SONGS = [
     moodHeadlineHtml: 'CON-<br>FIANZA', moodTagline: 'Fe · Rendición · Certeza',
     playerTitleHtml: 'Dios No Está<br>en Mi Contra',
     spotifyUrl: 'https://open.spotify.com/embed/track/6K8GOkxxQUUcZTG4pNT39l?utm_source=generator&theme=0',
+    lyrics: 'Tú dices que soy valiente\nCuando no creo en mí\nAunque podías dejarme\nMe acercaste a ti\n\nDices que voy a lograrlo\nCuando me cuesta creer\nEn medio de mi batalla\nEn ti confiaré\n\nEstás conmigo\nEstás obrando\nY peleando\nDios no está en mi contra\n\nUna revelación nueva\nMi amigo es mi Salvador\nAntes peleaba yo solo\nPero ahora ya no\n\nTengo un poder más grande\nQue lo que yo pueda enfrentar\nLa verdad del Evangelio\nConmigo estás\nConmigo estás\n\nLa batalla tú\nPor mí pelearás\nMi protección\nEn ti puedo confiar\nMi amigo fiel\nConmigo estarás\nMi protección\nEn ti puedo confiar',
   },
   {
     num: '04', accent: '#9aacac', noPhoto: true,
@@ -69,7 +70,7 @@ const ECOS_SONGS = [
     badge: 'Instrumental · Contemplación', artistSub: 'Duración: 2:30',
     playerTitleHtml: 'Roca Firme<br>(Interludio)',
     spotifyUrl: 'https://open.spotify.com/embed/track/37aiBLuOQFT41NOCPtb31C?utm_source=generator&theme=0',
-    lyrics: null,
+    lyrics: 'Aún en tormenta\nNada me moverá\nAnclado en Cristo\nSé que me sostendrá\n\nCristo mi roca firme\nAnclado estoy en Él\nAunque todo esté perdido\nFeliz siempre estaré\n\nPongo mi fe en Cristo\nÉl nunca fallará\nFiel por generaciones\nPor qué me ha de fallar',
   },
   {
     num: '05', accent: '#c8a040',
@@ -85,6 +86,7 @@ const ECOS_SONGS = [
     moodHeadlineHtml: 'DIGNIDAD', moodTagline: 'Comunidad · Unidad · Gloria',
     playerTitleHtml: 'Digno de<br>Adoración',
     spotifyUrl: 'https://open.spotify.com/embed/track/3whnBVGEI3Bis9fTAoVQUL?utm_source=generator&theme=0',
+    lyrics: 'Hoy tú me despertaste\nY mi copa rebosaste\nBendiciones me entregaste\nTe doy mi adoración\n\nEscribiste mi historia\nY te quiero dar la gloria\nPor tu gran misericordia\nTe doy mi adoración\n\nDigno\nDe mi adoración\nDe mi adoración eres\nDigno de mi adoración\nEres digno de adoración\n\nLa carrera no se acaba\nPero nada me hace falta\nPorque me basta tu gracia\nTe doy mi adoración\n\nAhora vivo perdonado\nUn futuro me has dado\nEres Dios de los milagros\nTe doy mi adoración\n\nCuando pienso en tu bondad\nCuando pienso en lo que has hecho Dios\nCuando pienso en tu amor\nTan agradecido estoy Señor\n\nPor las puertas que abriste\nPor el precio que pagaste\nPor la gracia que me diste\nTe doy mi adoración',
   },
   {
     num: '06', accent: '#a8929a', noPhoto: true,
@@ -97,7 +99,7 @@ const ECOS_SONGS = [
     badge: 'Íntimo · Personal', artistSub: 'Duración: 3:15',
     playerTitleHtml: 'Digno de Mi<br>Adoración',
     spotifyUrl: 'https://open.spotify.com/embed/track/1Gbt39w0pDm8aMncSvWYib?utm_source=generator&theme=0',
-    lyrics: null,
+    lyrics: 'Digno de mi adoración\nDigno de mi adoración\nTodo viene de ti\nY todo es para ti\nTú mereces gloria',
   },
   {
     num: '07', accent: '#c49a7a',
@@ -113,6 +115,7 @@ const ECOS_SONGS = [
     moodHeadlineHtml: 'GRATI-<br>TUD', moodTagline: 'Cierre · Esperanza · Abrazo',
     playerTitleHtml: 'Gratitud',
     spotifyUrl: 'https://open.spotify.com/embed/track/1N624pcSy9UkkyKiKzeUYA?utm_source=generator&theme=0',
+    lyrics: 'Que puedo decir\nNada nuevo hay\nQue pueda expresarte\nMi gratitud\n\nY es que una canción\nLlega a su fin\nPero tú mi Dios\nNunca lo harás\n\nMis manos alzaré\nTe alabo una y otra vez\nTodo lo que tengo es un\nAleluya, aleluya\nSé que mucho no es\nNada hay en mí para un Rey\nSolo mi alma que canta\nAleluya, aleluya\n\nUna cosa sé\nY eso es lo que haré\nCon brazos abiertos\nTe alabaré\n\nVamos corazón\nNo tengas miedo y levanta tu voz\nComo un león ruge en tu adoración\nLevántate y alaba al Señor',
   },
 ];
 
