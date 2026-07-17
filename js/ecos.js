@@ -13,23 +13,23 @@ const ECOS_PLACEHOLDER = {
 const ECOS_SONGS = [
   {
     num: '01', accent: '#d4a574', isPrologue: true,
-    cardImg: 'assets/ecos-de-la-casa/ecos-prologo.png', cardLabel: 'Prólogo · Audio & Video',
+    cardImg: 'assets/ecos-de-la-casa/ecos-prologo.webp', cardLabel: 'Prólogo · Audio & Video',
     title: 'Prólogo', titleHtml: 'Prólogo', artist: 'Alex Caniulef',
     concept: 'Antes de que empiece la música, quiero contarte qué es este proyecto y cómo todo converge en Ecos de la Casa. El inicio del viaje.',
     ctaLabel: 'Ver prólogo',
-    videoId: 'AqHDA6uuajw', videoPoster: 'assets/ecos-de-la-casa/ecos-video-cover.png',
+    videoId: 'AqHDA6uuajw', videoPoster: 'assets/ecos-de-la-casa/ecos-video-cover.webp',
     eyebrow: 'Pista 01', dirLabel: 'Alex Caniulef',
     body: 'Ecos de la Casa nace del deseo de volver a lo esencial: adorar a Jesús con sencillez, como en la mesa o el living de un hogar. Todo comenzó en un departamento, entre amigos que cantaban y oraban. De ahí nace este álbum: versiones en español pensadas para cantarse en comunidad — una invitación a abrir las puertas y dejar que la adoración resuene más allá de una habitación.',
     badge: 'Audio & Video · 1:00', artistSub: 'Duración: 1:00',
-    conceptSrc: 'assets/ecos-de-la-casa/concepto-prologo.jpg',
+    conceptSrc: 'assets/ecos-de-la-casa/concepto-prologo.webp',
   },
   {
     num: '02', accent: '#c4876a',
-    cardImg: 'assets/ecos-de-la-casa/cantar-portada.jpg', cardLabel: 'Canción',
+    cardImg: 'assets/ecos-de-la-casa/cantar-portada.webp', cardLabel: 'Canción',
     title: 'Yo Quiero Cantar de Tu Amor', titleHtml: 'Yo Quiero <br>Cantar de <br>Tu Amor', artist: 'Alex Caniulef',
     concept: 'El desierto es ese lugar donde buscas... y el eco solo te devuelve silencio. Y aun así, hay razones para cantar.',
     ctaLabel: 'Explorar',
-    videoId: 'YIfLozUwgBU', videoPoster: 'assets/ecos-de-la-casa/cantar-poster.jpg',
+    videoId: 'YIfLozUwgBU', videoPoster: 'assets/ecos-de-la-casa/cantar-poster.webp',
     flip: false, eyebrow: 'Canción 02', dirLabel: 'Alex Caniulef',
     body: 'El desierto de Atacama no perdona, pero tampoco olvida. Elegimos grabar ahí porque ningún estudio podía imitar ese silencio absoluto ni esa luz que quema y revela al mismo tiempo. Los colores del Altiplano —el rojo óxido de la roca, el turquesa imposible de las lagunas, el blanco cegador de la sal— tienen un contraste que ninguna postproducción alcanza a fabricar. Es un paisaje que te obliga a callar antes de cantar, y ese vacío se volvió la voz de fondo de esta canción: la certeza de que, incluso en la tierra más árida de Chile, hay una belleza que solo el desierto sabe guardar.',
     badge: 'Adoración · Desierto', artistSub: 'Duración: 3:45',
@@ -38,18 +38,18 @@ const ECOS_SONGS = [
     moodStory: 'Pasadas las Piedras Rojas, casi en la frontera con Argentina, el Altiplano se abre entre murallas de roca volcánica negra y rojiza. A más de 4.300 metros, con el sol pegando fuerte y el viento sin tregua, la Laguna Tuyajto aparecía como un espejo turquesa en medio de la nada — se sentía manejar en otro planeta. Cantar ahí fue otra historia: la altura no perdona, y sostener la voz con el aire que faltaba fue el verdadero desafío detrás de cada toma que Daniel insistía en repetir.',
     playerTitleHtml: 'Yo Quiero Cantar<br>de Tu Amor',
     conceptIsVideo: true, conceptVideoSrc: 'assets/ecos-de-la-casa/concepto-cantar-loop-v2.mp4',
-    historiaSrc: 'assets/ecos-de-la-casa/historia-cantar.jpg',
+    historiaSrc: 'assets/ecos-de-la-casa/historia-cantar.webp',
     spotifyUrl: 'https://open.spotify.com/embed/track/04NkjPpmSItiji7f7CU5cz?utm_source=generator&theme=0',
     lyrics: 'El mundo busqué y no pudo satisfacerme\nA donde más yo iré\nTu amor es para siempre\nCamino y verdad, tú me guiarás\nY nada nos podrá separar\nTú eres la luz, mi Rey oh Jesús\n\nYo quiero cantar de tu amor\nYo quiero cantar de tu amor\nTus promesas no tienen final\nTú las cumplirás y eso bastará\nYo quiero cantar de tu amor\n\nAl morir pensaste en mí\nAunque yo no lo merecía\nGracias a ti puedo vivir\nUn propósito en mi vida\nCamino y verdad, tú me guiarás\nY nada nos podrá separar\nTú eres la luz, mi Rey oh Jesús\n\nExisten mil razones para estar perdido\nMás tengo un futuro y solo es por Cristo',
-    moodSrc1: 'assets/ecos-de-la-casa/mood-cantar-1.jpg', moodSrc2: 'assets/ecos-de-la-casa/mood-cantar-2.jpg', moodSrc3: 'assets/ecos-de-la-casa/mood-cantar-3.jpg', moodSrc4: 'assets/ecos-de-la-casa/mood-cantar-4.jpg',
+    moodSrc1: 'assets/ecos-de-la-casa/mood-cantar-1.webp', moodSrc2: 'assets/ecos-de-la-casa/mood-cantar-2.webp', moodSrc3: 'assets/ecos-de-la-casa/mood-cantar-3.webp', moodSrc4: 'assets/ecos-de-la-casa/mood-cantar-4.webp',
   },
   {
     num: '03', accent: '#b08c5a',
-    cardImg: 'assets/ecos-de-la-casa/dios-portada.jpg', cardLabel: 'Canción · Feat. Cami Sepúlveda',
+    cardImg: 'assets/ecos-de-la-casa/dios-portada.webp', cardLabel: 'Canción · Feat. Cami Sepúlveda',
     title: 'Dios No Está en Mi Contra', titleHtml: 'Dios No <br>Está en <br>Mi Contra', artist: 'Alex Caniulef & Cami Sepúlveda',
     concept: 'Una declaración de fe en tiempos de incertidumbre. Cuando todo parece estar en contra, la verdad permanece.',
     ctaLabel: 'Explorar',
-    videoId: 'L7p13Sn_pzk', videoPoster: 'assets/ecos-de-la-casa/dios-poster.jpg',
+    videoId: 'L7p13Sn_pzk', videoPoster: 'assets/ecos-de-la-casa/dios-poster.webp',
     flip: true, eyebrow: 'Canción 03', dirLabel: 'Feat. Cami Sepúlveda',
     body: 'Una declaración de fe en tiempos de incertidumbre. La colaboración con Cami Sepúlveda añade una dimensión emocional profunda a este mensaje de confianza inquebrantable.',
     badge: 'Fe · Esperanza', artistSub: 'Feat. Cami Sepúlveda',
@@ -74,11 +74,11 @@ const ECOS_SONGS = [
   },
   {
     num: '05', accent: '#c8a040',
-    cardImg: 'assets/ecos-de-la-casa/digno-de-mi-doracion.jpg', cardLabel: 'Canción · Feat. Israel Oñate',
+    cardImg: 'assets/ecos-de-la-casa/digno-de-mi-doracion.webp', cardLabel: 'Canción · Feat. Israel Oñate',
     title: 'Digno de Adoración', titleHtml: 'Digno de <br>Adoración', artist: 'Alex Caniulef & Israel Oñate',
     concept: 'Una explosión de adoración genuina. Israel suma su voz para declarar la dignidad de Dios, en armonía y unidad espiritual.',
     ctaLabel: 'Explorar',
-    videoId: null, videoPoster: 'assets/ecos-de-la-casa/digno-de-mi-doracion.jpg', comingSoon: true,
+    videoId: null, videoPoster: 'assets/ecos-de-la-casa/digno-de-mi-doracion.webp', comingSoon: true,
     flip: true, eyebrow: 'Canción 05', dirLabel: 'Feat. Israel Oñate',
     body: 'Traducida de Elevation Español Worship, esta versión local con Israel Oñate representa la voz congregacional. Un himno que invita a la adoración corporativa donde toda comunidad puede unirse sin reservas.',
     badge: 'Adoración Corporativa', artistSub: 'Feat. Israel Oñate',
@@ -103,11 +103,11 @@ const ECOS_SONGS = [
   },
   {
     num: '07', accent: '#c49a7a',
-    cardImg: 'assets/ecos-de-la-casa/gratitud-portada.jpg', cardLabel: 'Canción Final',
+    cardImg: 'assets/ecos-de-la-casa/gratitud-portada.webp', cardLabel: 'Canción Final',
     title: 'Gratitud', titleHtml: 'Gratitud', artist: 'Alex Caniulef',
     concept: 'La culminación del viaje. Un cántico de agradecimiento que cierra el álbum con esperanza y paz. El eco de la casa se convierte en un abrazo.',
     ctaLabel: 'Explorar',
-    videoId: 'B5qPHJ_eWCE', videoPoster: 'assets/ecos-de-la-casa/gratitud-poster.jpg',
+    videoId: 'B5qPHJ_eWCE', videoPoster: 'assets/ecos-de-la-casa/gratitud-poster.webp',
     flip: true, eyebrow: 'Canción Final 07', dirLabel: 'Alex Caniulef',
     body: 'Gratitud es la conclusión narrativa de "Ecos de la Casa". Grabada en el Salto del Mili Mili, al sur de Chile, esta canción cierra el recorrido: después de la búsqueda, la declaración de fe, la adoración y la intimidad, llegamos a un lugar de agradecimiento simple, profundo y verdadero.',
     badge: 'Cierre · Paz · Gratitud', artistSub: 'Duración: 4:08',
@@ -443,7 +443,7 @@ function ecosBuildMarkup() {
     <nav class="ecos-navdots" id="ecos-navdots"></nav>
 
     <section class="ecos-hero" id="ecos-hero">
-      <div class="ecos-hero-media"><img id="ecos-hero-img" src="assets/ecos-de-la-casa/Portada_Ecos_de_la_Casa_Limpia.png" alt="Ecos de la Casa"></div>
+      <div class="ecos-hero-media"><img id="ecos-hero-img" src="assets/ecos-de-la-casa/Portada_Ecos_de_la_Casa_Limpia.webp" alt="Ecos de la Casa"></div>
       <img class="ecos-hero-logo" src="assets/ecos-de-la-casa/Logo-Efecto-Ecos-de-la-Casa-blanco.png" alt="Ecos de la Casa">
       <div class="ecos-hero-watermark">Ecos</div>
       <div class="ecos-hero-content">

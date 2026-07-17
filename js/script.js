@@ -13,6 +13,16 @@ window.addEventListener('scroll', () => {
 const heroSlides = document.querySelectorAll('.hero-slide');
 let activeSlide = 0;
 
+// Solo la primera foto del hero carga de inmediato; el resto entra después
+// del primer pintado para no competir por ancho de banda con el LCP.
+window.addEventListener('load', () => {
+  heroSlides.forEach((slide) => {
+    if (slide.dataset.bg) {
+      slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
+    }
+  });
+});
+
 setInterval(() => {
   heroSlides[activeSlide].classList.remove('active');
   activeSlide = (activeSlide + 1) % heroSlides.length;
@@ -22,10 +32,10 @@ setInterval(() => {
 // ---------- ALBUM DETAIL VIEW ----------
 // Edita spotify/youtube aquí para apuntar cada disco a su propio enlace.
 const albums = [
-  { title: 'Ecos de la Casa', year: '2026', cover: 'assets/site/Ecos-de-la-casa-cover.png', description: 'El nuevo proyecto de Alex, inspirado en la adoración en comunidad para acompañar a las iglesias de Latinoamérica.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef' },
-  { title: 'Sigo en Pie', year: '2022', cover: 'assets/site/Sigo-en-pie-cover.png', description: 'Un EP nacido de procesos difíciles, donde el pop rock se cruza con canciones para el día a día. Fe y esperanza en medio de la caída, un testimonio de que, pase lo que pase, seguimos de pie.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef', spotifyEmbed: 'https://open.spotify.com/embed/album/18zhIbZI70ePzphsIonFgI?utm_source=generator' },
-  { title: 'Viviré Live', year: '2020', cover: 'assets/site/Vivire-Live.png', description: 'Un registro en vivo de canciones de Mi Dios y Rey, su primer EP. El punto donde Alex comenzó a encontrar su sonido, grabado junto a la comunidad y con la energía de vivir la adoración todos juntos.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef', spotifyEmbed: 'https://open.spotify.com/embed/album/0yRF1waN5QnHvqLVuyvhJG?utm_source=generator' },
-  { title: 'Mi Dios y Rey', year: '2015', cover: 'assets/site/Mi-Dios-y-rey-cover.png', description: 'El primer disco de Alex Caniulef, punto de partida de una propuesta de adoración honesta y cercana.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef', spotifyEmbed: 'https://open.spotify.com/embed/album/3YOABkd5S0KNuY2IC72i6Y?utm_source=generator' },
+  { title: 'Ecos de la Casa', year: '2026', cover: 'assets/site/Ecos-de-la-casa-cover.webp', description: 'El nuevo proyecto de Alex, inspirado en la adoración en comunidad para acompañar a las iglesias de Latinoamérica.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef' },
+  { title: 'Sigo en Pie', year: '2022', cover: 'assets/site/Sigo-en-pie-cover.webp', description: 'Un EP nacido de procesos difíciles, donde el pop rock se cruza con canciones para el día a día. Fe y esperanza en medio de la caída, un testimonio de que, pase lo que pase, seguimos de pie.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef', spotifyEmbed: 'https://open.spotify.com/embed/album/18zhIbZI70ePzphsIonFgI?utm_source=generator' },
+  { title: 'Viviré Live', year: '2020', cover: 'assets/site/Vivire-Live.webp', description: 'Un registro en vivo de canciones de Mi Dios y Rey, su primer EP. El punto donde Alex comenzó a encontrar su sonido, grabado junto a la comunidad y con la energía de vivir la adoración todos juntos.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef', spotifyEmbed: 'https://open.spotify.com/embed/album/0yRF1waN5QnHvqLVuyvhJG?utm_source=generator' },
+  { title: 'Mi Dios y Rey', year: '2015', cover: 'assets/site/Mi-Dios-y-rey-cover.webp', description: 'El primer disco de Alex Caniulef, punto de partida de una propuesta de adoración honesta y cercana.', spotify: 'https://open.spotify.com/intl-es/artist/5ZXn7vFAzmZ1ANS4mYHydl', youtube: 'https://www.youtube.com/@AlexCaniulef', spotifyEmbed: 'https://open.spotify.com/embed/album/3YOABkd5S0KNuY2IC72i6Y?utm_source=generator' },
 ];
 
 const homeView = document.getElementById('home-view');
