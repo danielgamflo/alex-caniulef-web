@@ -264,7 +264,7 @@
 }
 
 /* historia block */
-.ecos-historia { position: relative; height: 70vh; min-height: 480px; }
+.ecos-historia { position: relative; height: 70vh; min-height: 480px; border-bottom: 3px solid #000; }
 .ecos-historia-media { position: absolute; inset: 0; }
 .ecos-historia-media img, .ecos-historia-media .ecos-placeholder { width: 100%; height: 100%; object-fit: cover; }
 .ecos-historia-overlay {
