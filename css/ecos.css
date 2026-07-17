@@ -201,7 +201,7 @@
 .ecos-concept-media video {
   width: 100%; aspect-ratio: 1/1; height: auto; object-fit: cover; display: block; margin: 0; border-radius: 20px;
 }
-.ecos-concept-media .ecos-placeholder, .ecos-concept-media img { width: 100%; height: 100%; }
+.ecos-concept-media .ecos-placeholder, .ecos-concept-media img { width: 100%; height: 100%; object-fit: cover; }
 .ecos-concept-text {
   padding: clamp(32px,5vw,56px) clamp(40px,6vw,72px); display: flex; flex-direction: column; align-items: center;
   text-align: center; gap: 24px; background: #0c0c0c; height: 100%; justify-content: space-between;
@@ -266,7 +266,7 @@
 /* historia block */
 .ecos-historia { position: relative; height: 70vh; min-height: 480px; }
 .ecos-historia-media { position: absolute; inset: 0; }
-.ecos-historia-media img, .ecos-historia-media .ecos-placeholder { width: 100%; height: 100%; }
+.ecos-historia-media img, .ecos-historia-media .ecos-placeholder { width: 100%; height: 100%; object-fit: cover; }
 .ecos-historia-overlay {
   position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.02) 55%, rgba(0,0,0,0.1) 100%);
   display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto; padding: clamp(28px,5vw,56px);
